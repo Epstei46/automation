@@ -35,3 +35,7 @@ test("Click on created movie to delete it", async () => {
     testSpan.click()
     await driver.sleep(2000)
 })
+test("Confirm the delete message includes the correct movie title", async () => {
+    let messageText = await driver.findElement(By.css("#message")).getText()
+    expect(`${testMovie} deleted!`).toEqual(messageText)
+})
