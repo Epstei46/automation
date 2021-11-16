@@ -28,14 +28,17 @@ test("Confirm the saved movie says the right thing", async () => {
 test("Click on created movie to grey it out", async () => {
     let testSpan = await driver.findElement(By.xpath(`//*[contains(text(), '${testMovie}')]`))
     testSpan.click()
+    await driver.sleep(500)
+    let testSpanClass = await testSpan.getAttribute("class")
+    expect(testSpanClass).toEqual("checked")
     await driver.sleep(2000)
 })
 test("Click on created movie to delete it", async () => {
     let testSpan = await driver.findElement(By.xpath(`//*[contains(text(), 'x')]`))
     testSpan.click()
-    await driver.sleep(2000)
 })
 test("Confirm the delete message includes the correct movie title", async () => {
     let messageText = await driver.findElement(By.css("#message")).getText()
     expect(`${testMovie} deleted!`).toEqual(messageText)
+    await driver.sleep(2000)
 })
