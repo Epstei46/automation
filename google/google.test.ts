@@ -18,26 +18,23 @@ afterAll(async () => {
 // This test will require you to change some values in order to get your tests up and running
 // You'll want to change each of the commented out pieces below
 test('I can search Google', async () => {
-
     // For this line you'll need to put the name of the search bar which you can find by inspecting that element in Chrome
-    let searchBar = await driver.findElement(By.name(/*Search Bar Name*/))
-    
+    let searchBar = await driver.findElement(By.name("q"))
     // This time you'll just finish this string with something you want to search on Google, make sure you leanve that \n !
-    await searchBar.sendKeys('/*The thing you want to search on Google*/\n')
-
+    await searchBar.sendKeys('Spaceballs Movie\n')
     // This line will pause our automation so you can see your search!
     await driver.sleep(2000)
 
     // We now want our automation to get the search bar again since we're on a new page
-    searchBar = await driver.findElement(By.name(/*Search Bar Name*/))
-
+    searchBar = await driver.findElement(By.name("q"))
     // We'll use this line to clear out our old input.
-    await /*Search Bar Selector*/.clear() 
-
+    await searchBar.clear() 
     // Let's do another search!
-    await /*Search Bar Selector*/.sendKeys('/*The string you want to search*/\n')
-
+    await searchBar.sendKeys('Ip Man Movie\n')
     await driver.sleep(2000)
 
-    
+    searchBar = await driver.findElement(By.name("q"))
+    await searchBar.clear()
+    await searchBar.sendKeys("The Witcher TV Show\n")
+    await driver.sleep(2000)
 })
