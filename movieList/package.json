@@ -1,7 +1,7 @@
 {
-  "name": "movieList",
+  "name": "movieist",
   "version": "1.0.0",
-  "description": "",
+  "description": "NOTE: Before beginning npm test, right click on index.html and open with Live Server (default port 5500). Can close the window. When done testing, can end the liveserver currently running by clicking on the 5500 at the bottom right of VS Code.",
   "main": "",
   "scripts": {
     "test": "jest"
@@ -10,16 +10,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/selenium-webdriver": "^4.0.12",
-    "chromedriver": "^95.0.0",
+    "@types/selenium-webdriver": "^4.0.17",
+    "chromedriver": "^97.0.4",
     "geckodriver": "^1.22.3",
     "jest": "^26.6.3",
-    "selenium-webdriver": "^4.0.0-beta.3",
+    "selenium-webdriver": "^4.1.1",
     "ts-jest": "^26.4.4",
     "ts-node": "^9.0.0",
-    "typescript": "^4.0.5"
+    "typescript": "^4.5.5"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.23"
+    "@types/jest": "^26.0.24"
   }
 }
